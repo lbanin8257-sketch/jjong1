@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>영어 비교급 학습 대시보드</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <h1>🎓 영어 비교급 배우기</h1>
+            <div class="user-info">
+                <span class="level-badge">레벨 3</span>
+                <span class="points">⭐ 2,340점</span>
+            </div>
+        </header>
+
+        <!-- Progress Overview -->
+        <section class="progress-overview">
+            <div class="card progress-card">
+                <h2>학습 현황</h2>
+                <div class="progress-stats">
+                    <div class="circular-progress">
+                        <svg class="progress-ring" width="120" height="120">
+                            <circle class="progress-ring-circle-bg" cx="60" cy="60" r="50"></circle>
+                            <circle class="progress-ring-circle" cx="60" cy="60" r="50" id="progress-circle"></circle>
+                        </svg>
+                        <div class="progress-text">
+                            <div class="progress-percent">67%</div>
+                            <div class="progress-label">완료</div>
+                        </div>
+                    </div>
+                    <div class="stats-grid">
+                        <div class="stat-item">
+                            <div class="stat-number">2/3</div>
+                            <div class="stat-label">완료한 레슨</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">3/5</div>
+                            <div class="stat-label">획득 배지</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">850/1000</div>
+                            <div class="stat-label">경험치</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">🔥 5일</div>
+                            <div class="stat-label">연속 학습</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Lesson Sections -->
+        <section class="lessons">
+            <h2>📚 비교급 학습 섹션</h2>
+            <div class="lessons-grid" id="lessons-grid">
+                <!-- Lessons will be populated by JavaScript -->
+            </div>
+        </section>
+
+        <!-- Games Section -->
+        <section class="games">
+            <h2>🎮 인터랙티브 게임</h2>
+            <div class="games-grid">
+                <div class="card game-card" data-game="matching">
+                    <div class="game-icon">🎯</div>
+                    <h3>매칭 게임</h3>
+                    <p>형용사와 비교급을 연결해보세요</p>
+                    <button class="btn btn--primary btn--full-width">게임 시작</button>
+                </div>
+                <div class="card game-card" data-game="fill-blank">
+                    <div class="game-icon">✏️</div>
+                    <h3>문장 완성</h3>
+                    <p>빈칸에 알맞은 비교급을 넣어보세요</p>
+                    <button class="btn btn--primary btn--full-width">게임 시작</button>
+                </div>
+                <div class="card game-card" data-game="picture-compare">
+                    <div class="game-icon">🖼️</div>
+                    <h3>그림 비교</h3>
+                    <p>그림을 보고 비교 문장을 만들어보세요</p>
+                    <button class="btn btn--primary btn--full-width">게임 시작</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Daily Quiz -->
+        <section class="daily-quiz">
+            <h2>📝 오늘의 퀴즈</h2>
+            <div class="card quiz-card">
+                <div class="quiz-header">
+                    <div class="quiz-counter">문제 <span id="current-question">1</span> / <span id="total-questions">5</span></div>
+                    <div class="quiz-score">점수: <span id="quiz-score">0</span></div>
+                </div>
+                <div class="quiz-content" id="quiz-content">
+                    <div class="quiz-question" id="quiz-question">퀴즈 시작 버튼을 눌러주세요!</div>
+                    <div class="quiz-options" id="quiz-options"></div>
+                </div>
+                <div class="quiz-controls">
+                    <button class="btn btn--primary" id="start-quiz">퀴즈 시작</button>
+                    <button class="btn btn--secondary hidden" id="next-question">다음 문제</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Badges Section -->
+        <section class="achievements">
+            <h2>🏆 성취 배지</h2>
+            <div class="badges-grid" id="badges-grid">
+                <!-- Badges will be populated by JavaScript -->
+            </div>
+        </section>
+    </div>
+
+    <!-- Game Modal -->
+    <div class="modal hidden" id="game-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="game-title">게임</h3>
+                <button class="btn btn--outline" id="close-game">닫기</button>
+            </div>
+            <div class="modal-body" id="game-content">
+                <!-- Game content will be dynamically loaded -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Lesson Modal -->
+    <div class="modal hidden" id="lesson-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="lesson-title">레슨</h3>
+                <button class="btn btn--outline" id="close-lesson">닫기</button>
+            </div>
+            <div class="modal-body" id="lesson-content">
+                <!-- Lesson content will be dynamically loaded -->
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
